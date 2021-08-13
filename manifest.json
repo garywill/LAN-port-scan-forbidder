@@ -1,0 +1,29 @@
+{
+    "name": "LAN port scan forbidder",
+    "description": "Forbid non-LAN web to access LAN",
+    "manifest_version": 2,
+    "version": "0.2.0",
+    "homepage_url": "https://garywill.github.io",
+    "developer": {
+        "name": "Garywill",
+        "url": "https://github.com/garywill/"
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "*://*/*",
+        "menus",
+        "tabs"
+    ],
+    "icons": {
+        "128": "icon.svg"
+    },
+    "background": {
+        "page": "background.html"
+    },
+    "browser_action": {
+        "default_icon": "icon_gray.svg",
+        "default_title": "LAN port scan forbidder"
+    }
+
+} 
