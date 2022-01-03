@@ -5,6 +5,10 @@ setGlobalEnable();
 
 //----------------------------------------------------------
 async function onBeforeRequest(details)
+/*
+NOTICE Chrome doesn't allow async function here
+    Change it to sync function for Chrome
+*/
 {
     if (await is_off(details=details)) return;
     
@@ -12,7 +16,13 @@ async function onBeforeRequest(details)
     const targetURL = details.url;
     const resourceType = details.type;
     //const documentUrl = details.documentUrl;
-    const originUrl = details.originUrl;
+    
+    var originUrl;
+    if (isFirefox)
+        originUrl = details.originUrl;
+    else if (isChrome)
+        originUrl = details.initiator;
+    
     const tabid = details.tabId;
     
     if ( ! originUrl ) 

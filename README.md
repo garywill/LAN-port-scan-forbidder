@@ -1,6 +1,6 @@
 # LAN port scan forbidder
 
-Forbid untrusted web to scan localhost or LAN. Firefox addon.
+Forbid untrusted web to scan localhost or LAN. Browser addon.
 
 ## What
 
@@ -22,7 +22,7 @@ If user find a web broken (generally won't), user can temporary set this addon d
 
 - this one tab
 - this one tab and new tabs opened by this tab
-- this one window
+- this one window (Firefox only)
 - globally
 
-there's toolbar button badge indicating disabling status.
+there's showy toolbar button badge indicating disabling status.

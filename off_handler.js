@@ -22,9 +22,9 @@ function updateGlobalIcon(){
         browser.browserAction.setIcon( { path: "icon_gray.png" } );
     }
     else{  // globally enabled
-        browser.browserAction.setBadgeText({ text: null });
+        browser.browserAction.setBadgeText({ text: "" });
         browser.browserAction.setBadgeBackgroundColor({ color: "#00BF00" });
-        browser.browserAction.setTitle({title: null});
+        browser.browserAction.setTitle({title: ""});
         browser.browserAction.setIcon( { path: "icon.png" } );
     }
 }
@@ -94,9 +94,9 @@ function update_windowBadge(wid){
         browser.browserAction.setBadgeText({ text: "woff" , windowId: wid});
         browser.browserAction.setBadgeBackgroundColor({ color: "#ff6666" , windowId: wid}); // red
     }else{
-        browser.browserAction.setTitle({title: null, windowId: wid });
-        browser.browserAction.setBadgeText({ text: null , windowId: wid});
-        browser.browserAction.setBadgeBackgroundColor({ color: null , windowId: wid});
+        browser.browserAction.setTitle({title: "", windowId: wid });
+        browser.browserAction.setBadgeText({ text: "" , windowId: wid});
+        //browser.browserAction.setBadgeBackgroundColor({ color: "" , windowId: wid});
     }
 }
 //---------------------------------------------------
@@ -163,10 +163,10 @@ async function update_tabBadge(tabid){
             //await browser.browserAction.setBadgeBackgroundColor({ color: "#ffea00" , tabId: tabid}); // orange
             await browser.browserAction.setBadgeBackgroundColor({ color: "#ff6666" , tabId: tabid}); // red
         }else{
-            await browser.browserAction.setTitle({title: null, tabId: tabid });
-            //await browser.browserAction.setBadgeTextColor({color: null, tabId: tabid });
-            await browser.browserAction.setBadgeText({ text: null , tabId: tabid});
-            await browser.browserAction.setBadgeBackgroundColor({ color: null , tabId: tabid});
+            await browser.browserAction.setTitle({title: "", tabId: tabid });
+            //await browser.browserAction.setBadgeTextColor({color: "", tabId: tabid });
+            await browser.browserAction.setBadgeText({ text: "" , tabId: tabid});
+            //await browser.browserAction.setBadgeBackgroundColor({ color: "" , tabId: tabid});
         }
     } catch(err){ 
         if ( ! err.message.startsWith("Invalid tab ID:") ) console.error(err);
