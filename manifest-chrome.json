@@ -3,17 +3,16 @@
     "description": "Forbid non-LAN web to access LAN",
     "manifest_version": 2,
     "version": "0.2.0",
-    "homepage_url": "https://garywill.github.io",
-    "developer": {
+    "homepage_url": "https://github.com/garywill/LAN-port-scan-forbidder/",
+    "author": {
         "name": "Garywill",
-        "url": "https://github.com/garywill/LAN-port-scan-forbidder"
+        "url": "https://garywill.github.io"
     },
     "permissions": [
         "webRequest",
         "webRequestBlocking",
         "*://*/*",
-        "contextMenus",
-        "tabs"
+        "contextMenus"
     ],
     "icons": {
         "128": "icon.png"

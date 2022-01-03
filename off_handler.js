@@ -19,13 +19,13 @@ function updateGlobalIcon(){
         browser.browserAction.setBadgeText({ text: "Off" });
         browser.browserAction.setBadgeBackgroundColor({ color: "#dd0000" }); // red
         browser.browserAction.setTitle({title: default_title + " (Globally disabled)"});
-        browser.browserAction.setIcon( { path: "icon_gray.svg" } );
+        browser.browserAction.setIcon( { path: "icon_gray.png" } );
     }
     else{  // globally enabled
         browser.browserAction.setBadgeText({ text: null });
         browser.browserAction.setBadgeBackgroundColor({ color: "#00BF00" });
         browser.browserAction.setTitle({title: null});
-        browser.browserAction.setIcon( { path: "icon.svg" } );
+        browser.browserAction.setIcon( { path: "icon.png" } );
     }
 }
 function isGlobalEnabled(){
