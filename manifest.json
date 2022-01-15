@@ -24,6 +24,22 @@
     "browser_action": {
         "default_icon": "icon_gray.png",
         "default_title": "LAN port scan forbidder"
+    },
+    "commands": {
+        "_execute_browser_action": {
+            "description": "Click toolbar button"
+        },
+        "toggle_t" : {
+            "description": "Toggle for one tab"
+        },
+        "toggle_h" : {
+            "description": "Toggle for one tab and new tabs opened by it"
+        },
+        "toggle_window" : {
+            "description": "Toggle for one window"
+        },
+        "toggle_global" : {
+            "description": "Toggle globally enable/disable"
+        }
     }
-
 } 

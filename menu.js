@@ -64,41 +64,16 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
 
     switch ( menuItemId ){
         case "checkbox_global_disable":
-            toggle_global();
+            toggle_global_enabled();
         break;
         case "checkbox_w_disable":
-            toggle_w(wid);
+            toggle_window_disabled(wid);
         break;
         case "checkbox_t_disable":
-            toggle_t(tabid);
+            toggleTab_t(tabid);
         break;
         case "checkbox_h_disable":
-            toggle_h(tabid);
+            toggleTab_h(tabid);
         break;
     }
 });
-
-function toggle_t(tabid) {
-    if (!isTabIn_list_t(tabid)) 
-        setTab_t(tabid);
-    else 
-        unsetTab_t(tabid);
-}
-function toggle_h(tabid) {
-    if (!isTabIn_list_h(tabid)) 
-        setTab_h(tabid);
-    else 
-        unsetTab_h(tabid);
-}
-function toggle_w(wid) {
-    if (!isWindowDisabled(wid)) 
-        setWindowDisabled(wid);
-    else 
-        unsetWindowDisabled(wid);
-}
-function toggle_global() {
-    if (!isGlobalEnabled())
-        setGlobalEnable();
-    else
-        unsetGlobalEnable();
-}

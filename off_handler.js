@@ -236,3 +236,27 @@ async function is_off(details, tabid, tab, wid, changeInfo){
     if( isWindowDisabled( wid ) ) return true;
 
 }
+
+
+browser.commands.onCommand.addListener(async function (command) {
+    switch (command) {
+        case "toggle_global":
+            toggle_global_enabled();
+        break;
+        case "toggle_t":
+        case "toggle_h":
+        case "toggle_window":
+            const cur_tabInfo = (await browser.tabs.query({currentWindow: true, active: true}) ) [0];
+            const tabid = cur_tabInfo.id;
+            const wid = cur_tabInfo.windowId;
+            
+            if (command == "toggle_t") {
+                toggleTab_t(tabid);
+            }else if (command == "toggle_h") {
+                toggleTab_h(tabid);
+            }else if (command == "toggle_window") {
+                toggle_window_disabled(wid);
+            }
+        break;
+    }
+});
