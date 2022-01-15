@@ -34,8 +34,8 @@ if (isFirefox) {
 browser.contextMenus.create({
     contexts: ["browser_action"],
     id: "checkbox_global_disable",
-    type: "checkbox",
-    title: `Disable ${addon_name} globally`
+    type: type_switch,
+    title: `${str_switch} ${addon_name} globally`
 });
 
 if (isFirefox) {
@@ -64,24 +64,41 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
 
     switch ( menuItemId ){
         case "checkbox_global_disable":
-            if (checked) 
-                unsetGlobalEnable();
-            else setGlobalEnable();
+            toggle_global();
         break;
         case "checkbox_w_disable":
-            if (!isWindowDisabled(wid)) 
-                setWindowDisabled(wid);
-            else unsetWindowDisabled(wid);
+            toggle_w(wid);
         break;
         case "checkbox_t_disable":
-            if (!isTabIn_list_t(tabid)) 
-                setTab_t(tabid);
-            else unsetTab_t(tabid);
+            toggle_t(tabid);
         break;
         case "checkbox_h_disable":
-            if (!isTabIn_list_h(tabid)) 
-                setTab_h(tabid);
-            else unsetTab_h(tabid);
+            toggle_h(tabid);
         break;
     }
 });
+
+function toggle_t(tabid) {
+    if (!isTabIn_list_t(tabid)) 
+        setTab_t(tabid);
+    else 
+        unsetTab_t(tabid);
+}
+function toggle_h(tabid) {
+    if (!isTabIn_list_h(tabid)) 
+        setTab_h(tabid);
+    else 
+        unsetTab_h(tabid);
+}
+function toggle_w(wid) {
+    if (!isWindowDisabled(wid)) 
+        setWindowDisabled(wid);
+    else 
+        unsetWindowDisabled(wid);
+}
+function toggle_global() {
+    if (!isGlobalEnabled())
+        setGlobalEnable();
+    else
+        unsetGlobalEnable();
+}
