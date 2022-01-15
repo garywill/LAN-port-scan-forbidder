@@ -10,7 +10,8 @@ NOTICE Chrome doesn't allow async function here
     Change it to sync function for Chrome
 */
 {
-    if (await is_off(details=details)) return;
+    if (await is_off(details=details)) 
+        return;
     
     //const method = details.method;
     const targetURL = details.url;
