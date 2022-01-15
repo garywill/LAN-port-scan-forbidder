@@ -33,7 +33,8 @@ function isGlobalEnabled(){
     return global_enabled;
 }
 function setGlobalEnable(){
-    if ( global_enabled == true ) return;
+    if ( global_enabled == true ) 
+        return;
     
     listeners.push([browser.webRequest.onBeforeRequest, onBeforeRequest]);
     browser.webRequest.onBeforeRequest.addListener(
