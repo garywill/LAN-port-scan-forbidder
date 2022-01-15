@@ -209,6 +209,10 @@ browser.tabs.onCreated.addListener( (tab) => {
 });
 
 async function is_off(details, tabid, tab, wid, changeInfo){
+/*
+NOTICE Chrome doesn't allow async function here
+    Change it to sync function for Chrome
+*/
     if ( ! global_enabled ) return true;
     
     if (typeof(details) == "object" )
@@ -225,6 +229,10 @@ async function is_off(details, tabid, tab, wid, changeInfo){
     if ( tabid < 0 ) return true;
     if (isTabIn_list_h(tabid) || isTabIn_list_t(tabid) ) return true;
     
+    /*
+    NOTICE Chrome doesn't allow async function here
+        Change it to sync function for Chrome
+    */
     if ( wid === undefined )
         try{ 
             wid = (await browser.tabs.get(tabid)).windowId;
