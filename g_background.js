@@ -4,13 +4,19 @@ const default_title = addon_name;
 setGlobalEnable();
 
 //----------------------------------------------------------
+#ifndef CHROME
 async function onBeforeRequest(details)
-/*
-NOTICE Chrome doesn't allow async function here
-    Change it to sync function for Chrome
-*/
+#else
+      function onBeforeRequest(details)
+#endif      
 {
-    if (await is_off(details=details)) 
+    if (
+        #ifndef CHROME
+        await is_off(details)
+        #else
+        is_off(details)
+        #endif
+    ) 
         return;
     
     //const method = details.method;
@@ -138,7 +144,7 @@ function ifBlock(parsed_ip)
     return false;
 }
 
-function getUrlHostNoPort(s) // 'http://example.com:8888/a/b/c' --> 'example.com:8888'
+function getUrlHostNoPort(s) 
 {
     
     var arr = s.split("/");
