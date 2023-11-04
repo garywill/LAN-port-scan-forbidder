@@ -21,6 +21,10 @@ Forbid any website behaviors trying to connect to your LAN or localhost, if user
 
 > Using JS library [whitequark/ipaddr.js](https://github.com/whitequark/ipaddr.js) (MIT License) v2.0.0 to judge IP range.
 
+### Notification
+
+User can enable notification. When untrusted web tries to access private network and get blocked, will show up notification. 
+
 ### Fallback operation
 
 If user find a web broken, user can temporary set this addon disabled via toolbar button for:

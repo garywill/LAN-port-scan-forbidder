@@ -17,7 +17,11 @@
         "ftp://*/*",
         "ftps://*/*",
         "contextMenus",
+        "storage", 
         "tabs"
+    ], 
+    "optional_permissions": [
+        "notifications"
     ],
     "icons": {
         "128": "icon.png"
@@ -44,6 +48,14 @@
         },
         "toggle_global" : {
             "description": "Toggle globally enable/disable"
+        }
+    },
+    "options_ui": {
+        "page": "options.html"
+    },    
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{74accabf-53dc-476f-b5fd-0227884c230a}"
         }
     }
 } 

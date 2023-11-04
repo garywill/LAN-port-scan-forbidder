@@ -76,6 +76,7 @@ async function onBeforeRequest(details)
  
     if ( targetHost == "localhost" )
     {
+        showNotify(originHost, targetURL);
         return {cancel: true};
     }
     
@@ -91,6 +92,7 @@ async function onBeforeRequest(details)
     if ( ifBlock( parsed_targetHost ) )
     {
         //console.log( "in block range");
+        showNotify(originHost, targetURL);
         return {cancel: true};
     }
 
@@ -102,11 +104,33 @@ async function onBeforeRequest(details)
         if ( ifBlock(targetHost_toV4_parsed) )
         {
             //console.log("ipv6 mapped to ipv4 in block range");
+            showNotify(originHost, targetURL);
             return {cancel: true};
         }
         
     }
     
+}
+
+async function showNotify(origin, target)
+{
+    if ( ( await get_settings_local() ) ['notify'] === true) 
+    {
+        browser.notifications.create({
+            "type": "basic",
+            //"iconUrl": 
+            "title": `${origin} - ${addon_name}`, 
+            "message": 
+`Blocked:
+
+from page: ${origin}
+to fetch : ${target}` ,
+        });    
+    }
+    async function get_settings_local()
+    {
+        return ( await browser.storage.local.get() ) ;
+    }
 }
 
 function isLan(parsed_ip)
