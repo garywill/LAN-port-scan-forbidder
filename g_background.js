@@ -118,7 +118,7 @@ async function showNotify(origin, target)
     {
         chrome.notifications.create({
             "type": "basic",
-            //"iconUrl": 
+            "iconUrl": 'icon.png', 
             "title": `${origin} - ${addon_name}`, 
             "message": 
 `Blocked:
