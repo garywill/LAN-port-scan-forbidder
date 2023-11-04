@@ -229,11 +229,11 @@ browser.tabs.onCreated.addListener( (tab) => {
     }
 });
 
+#ifndef CHROME
 async function is_off(details, tabid, tab, wid, changeInfo){
-/*
-NOTICE Chrome doesn't allow async function here
-    Change it to sync function for Chrome
-*/
+#else
+      function is_off(details, tabid, tab, wid, changeInfo){
+#endif
     if ( ! global_enabled ) 
         return true;
     
@@ -253,10 +253,7 @@ NOTICE Chrome doesn't allow async function here
     if (isTabIn_list_h(tabid) || isTabIn_list_t(tabid) ) 
         return true;
     
-    /*
-    NOTICE Chrome doesn't allow async function here
-        Change it to sync function for Chrome
-    */
+    #ifndef CHROME
     if ( wid === undefined )
         try{ 
             wid = (await browser.tabs.get(tabid)).windowId;
@@ -265,6 +262,7 @@ NOTICE Chrome doesn't allow async function here
                 console.error(err);
             return true;
         }
+    #endif
     
     if( isWindowDisabled( wid ) ) 
         return true;
