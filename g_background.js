@@ -4,14 +4,14 @@ const default_title = addon_name;
 setGlobalEnable();
 
 //----------------------------------------------------------
-#ifndef CHROME
+#ifndef chrome
 async function onBeforeRequest(details)
 #else
       function onBeforeRequest(details)
 #endif      
 {
     if (
-        #ifndef CHROME
+        #ifndef chrome
         await is_off(details)
         #else
         is_off(details)
