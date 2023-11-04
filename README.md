@@ -3,7 +3,7 @@
 Forbid untrusted web to scan localhost or LAN. Browser addon.
 
 - [Firefox Addon](https://addons.mozilla.org/firefox/addon/lan-port-scan-forbidder/)
-- [Chrome Addon](https://chrome.google.com/webstore/detail/lapppchpconamefemlnjdebbcpbncafl)
+- [Chrome Addon](https://chrome.google.com/webstore/detail/lapppchpconamefemlnjdebbcpbncafl) (Manifest v2 needed)
 
 ## What
 
@@ -41,3 +41,8 @@ Not all LAN-port-scan are evil.
 - Some manufacturers provide web for user's browser to scan LAN for their product that need updating.
 
 - Some softwares use `127.0.0.1` communication to interact between native program and web.
+
+## Disclaimer
+
+This open souce addon comes with no warranty. Use on you own risk!
+
