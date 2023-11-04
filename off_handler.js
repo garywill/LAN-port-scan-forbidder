@@ -39,7 +39,14 @@ function setGlobalEnable(){
     listeners.push([browser.webRequest.onBeforeRequest, onBeforeRequest]);
     browser.webRequest.onBeforeRequest.addListener(
         onBeforeRequest,
-        {urls: ["<all_urls>"],},
+        {urls: [
+            "<all_urls>",
+            "*://*/*",
+            "ws://*/*",
+            "wss://*/*",
+            "ftp://*/*",
+            "ftps://*/*",
+        ],},
         ["blocking", "requestBody"]
     ); 
     

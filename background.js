@@ -32,7 +32,7 @@ NOTICE Chrome doesn't allow async function here
     if ( resourceType == "main_frame" ) 
         return;
     
-    for ( unhandled of ["moz-extension:", "about:", "file:", "chrome:", "javascript:", "data:"] )
+    for ( unhandled of ["moz-extension:","chrome-extension:", "about:", "file:", "chrome:", "javascript:", "data:"] )
         if ( targetURL.toLowerCase().startsWith(unhandled) || originUrl.toLowerCase().startsWith(unhandled) )
             return;
     

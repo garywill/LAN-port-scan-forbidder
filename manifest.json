@@ -12,6 +12,10 @@
         "webRequest",
         "webRequestBlocking",
         "*://*/*",
+        "ws://*/*",
+        "wss://*/*",
+        "ftp://*/*",
+        "ftps://*/*",
         "contextMenus",
         "tabs"
     ],
