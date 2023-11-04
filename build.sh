@@ -26,11 +26,11 @@ function gpp_those_files()
     done < <(ls -1 g_*)
 }
 
-gpp_those_files "firefox"
-gpp_those_files "chrome"
+gpp_those_files "FIREFOX"
+gpp_those_files "CHROME"
 
-cp manifest.json          dist/firefox/manifest.json
-cp manifest-chrome.json   dist/chrome/manifest.json
+cp manifest.json          dist/FIREFOX/manifest.json
+cp manifest-chrome.json   dist/CHROME/manifest.json
 
 
 

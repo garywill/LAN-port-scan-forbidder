@@ -228,7 +228,7 @@ browser.tabs.onCreated.addListener( (tab) => {
     }
 });
 
-#ifndef chrome
+#ifndef CHROME
 async function is_off(details, tabid, tab, wid, changeInfo){
 #else
       function is_off(details, tabid, tab, wid, changeInfo){
@@ -252,7 +252,7 @@ async function is_off(details, tabid, tab, wid, changeInfo){
     if (isTabIn_list_h(tabid) || isTabIn_list_t(tabid) ) 
         return true;
     
-    #ifndef chrome
+    #ifndef CHROME
     if ( wid === undefined )
         try{ 
             wid = (await browser.tabs.get(tabid)).windowId;

@@ -4,14 +4,14 @@ const default_title = addon_name;
 setGlobalEnable();
 
 //----------------------------------------------------------
-#ifndef chrome
+#ifndef CHROME
 async function onBeforeRequest(details)
 #else
       function onBeforeRequest(details)
 #endif      
 {
     if (
-        #ifndef chrome
+        #ifndef CHROME
         await is_off(details)
         #else
         is_off(details)
@@ -116,7 +116,7 @@ async function showNotify(origin, target)
 {
     if ( ( await get_settings_local() ) ['notify'] === true) 
     {
-        browser.notifications.create({
+        chrome.notifications.create({
             "type": "basic",
             //"iconUrl": 
             "title": `${origin} - ${addon_name}`, 
