@@ -51,7 +51,6 @@ function setGlobalEnable(){
             "ws://*/*",
             "wss://*/*",
             "ftp://*/*",
-            "ftps://*/*",
         ],},
         ["blocking", "requestBody"]
     ); 

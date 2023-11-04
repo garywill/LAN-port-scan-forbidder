@@ -15,7 +15,6 @@
         "ws://*/*",
         "wss://*/*",
         "ftp://*/*",
-        "ftps://*/*",
         "contextMenus", 
         "storage"
     ],
