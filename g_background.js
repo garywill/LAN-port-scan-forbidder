@@ -112,26 +112,6 @@ async function onBeforeRequest(details)
     
 }
 
-async function showNotify(origin, target)
-{
-    if ( ( await get_settings_local() ) ['notify'] === true) 
-    {
-        chrome.notifications.create({
-            "type": "basic",
-            "iconUrl": 'icon.png', 
-            "title": `${origin} - ${addon_name}`, 
-            "message": 
-`Blocked:
-
-from page: ${origin}
-to fetch : ${target}` ,
-        });    
-    }
-    async function get_settings_local()
-    {
-        return ( await browser.storage.local.get() ) ;
-    }
-}
 
 function isLan(parsed_ip)
 {
