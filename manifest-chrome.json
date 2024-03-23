@@ -2,7 +2,7 @@
     "name": "LAN port scan forbidder",
     "description": "Forbid non-LAN web to access LAN",
     "manifest_version": 2,
-    "version": "0.6.1",
+    "version": "0.6.2",
     "homepage_url": "https://github.com/garywill/LAN-port-scan-forbidder/",
     "author": {
         "name": "Garywill",
